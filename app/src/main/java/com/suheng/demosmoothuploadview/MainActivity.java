@@ -5,14 +5,12 @@ import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import com.suheng.widget.SmoothUploadView;
 
 import java.lang.ref.WeakReference;
-import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
     private static final int TIME_UPDATE_PROGRESS = 100;
@@ -23,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.upload_view_aty);
+        setContentView(R.layout.main_aty);
 
         mSmoothUploadView = findViewById(R.id.upload_handler_view);
         mSmoothUploadView.setImageBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.share_pic));
@@ -43,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
         mSmoothUploadView.updateProgress(percent);
     }
 
-    public void onClickUploadHandler(View view) {
+    public void onClickUpload(View view) {
         mSmoothUploadView.resetProgress();
 
         mHandler.removeMessages(MSG_UPDATE_PROGRESS);
@@ -53,22 +51,8 @@ public class MainActivity extends AppCompatActivity {
         mHandler.sendMessageDelayed(msg, TIME_UPDATE_PROGRESS);
     }
 
-    public void onClickUpload(View view) {
-        final SmoothUploadView smoothUploadView = findViewById(R.id.smooth_upload_view);
-        int temp = new Random().nextInt(3);
-        if (temp == 0) {
-            smoothUploadView.setMaxProgress(260);
-            smoothUploadView.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.chat_picture));
-            smoothUploadView.updateProgress(260);
-        } else if (temp == 1) {
-            smoothUploadView.setImageResource(R.drawable.share_pic);
-            smoothUploadView.updateProgress(1.0);
-        } else {
-            smoothUploadView.setImageBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.zsj15hgvj30sg15hkbw));
-            smoothUploadView.updateProgress(0.7);
-        }
-
-        //startActivity(new Intent(this, SecondActivity.class));
+    public void onClickOpenAty(View view) {
+        startActivity(new Intent(this, SecondActivity.class));
     }
 
     @Override
