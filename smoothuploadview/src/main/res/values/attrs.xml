@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="RoundImageView">
+        <attr name="rivCornersRadius" format="dimension|reference"/>
+    </declare-styleable>
+
+    <declare-styleable name="SmoothUploadView">
+        <attr name="suvCornersRadius" format="dimension"/>
+        <attr name="suvProgressColor" format="color"/>
+    </declare-styleable>
+</resources>
