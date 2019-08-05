@@ -7,8 +7,8 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
 
-        <item name="suvCornersRadius">6dp</item>
-        <item name="suvProgressColor">#88000000</item>
+        <item name="suvProgressColor">#88000000</item><!--定义SmoothUploadView遮罩层（ProgressBar）背景（必须）-->
+        <item name="suvCornersRadius">6dp</item><!--定义SmoothUploadView为圆角，默认为直角（非必须）-->
     </style>
 
     <style name="SecondTheme" parent="AppTheme">

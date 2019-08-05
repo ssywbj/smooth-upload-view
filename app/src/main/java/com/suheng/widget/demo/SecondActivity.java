@@ -1,4 +1,4 @@
-package com.suheng.demosmoothuploadview;
+package com.suheng.widget.demo;
 
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
